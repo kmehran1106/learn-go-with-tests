@@ -2,6 +2,7 @@ package hello_world
 
 import (
 	"testing"
+	"github.com/kmehran1106/learn-go-with-tests/common"
 )
 
 func Test_Hello(t *testing.T) {
@@ -13,7 +14,7 @@ func Test_Hello(t *testing.T) {
 		result := Hello("Chris", "english")
 
 		// Then
-		assertCorrectMessage(t, expected, result)
+		common.AssertCorrectMessage(t, expected, result)
 	})
 
 	t.Run("Saying hello to people in spanish", func(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_Hello(t *testing.T) {
 		result := Hello("Chris", "spanish")
 
 		// Then
-		assertCorrectMessage(t, expected, result)
+		common.AssertCorrectMessage(t, expected, result)
 	})
 
 	t.Run("Saying hello to people in french", func(t *testing.T) {
@@ -35,7 +36,7 @@ func Test_Hello(t *testing.T) {
 		result := Hello("Chris", "french")
 
 		// Then
-		assertCorrectMessage(t, expected, result)
+		common.AssertCorrectMessage(t, expected, result)
 	})
 
 	t.Run("Saying hello to the world in english when empty", func(t *testing.T) {
@@ -46,13 +47,6 @@ func Test_Hello(t *testing.T) {
 		result := Hello("", "")
 
 		// Then
-		assertCorrectMessage(t, expected, result)
+		common.AssertCorrectMessage(t, expected, result)
 	})
-}
-
-func assertCorrectMessage(t testing.TB, expected, result string) {
-	t.Helper()
-	if expected != result {
-		t.Errorf("Expected value: %q; But returned %q", expected, result)
-	}
 }
