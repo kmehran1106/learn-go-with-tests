@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/kmehran1106/learn-go-with-tests/hello_world"
 	"github.com/kmehran1106/learn-go-with-tests/integers"
+	"github.com/kmehran1106/learn-go-with-tests/iteration"
 )
 
 func main() {
@@ -15,4 +16,7 @@ func main() {
 
 	// for the sake of testing we are running integer chapters here
 	fmt.Println(integers.Add(2, 2))
+
+	// for the sake of testing we are running iteration chapters here
+	fmt.Println(iteration.Repeat("a", 5))
 }

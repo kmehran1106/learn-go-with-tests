@@ -1,6 +1,5 @@
 package hello_world
 
-
 const (
 	englishLanguage = "english"
 	spanishLanguage = "spanish"
@@ -31,4 +30,3 @@ func getGreetingPrefix(language string) (prefix string) {
 	}
 	return prefix
 }
-

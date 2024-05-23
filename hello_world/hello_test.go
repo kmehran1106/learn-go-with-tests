@@ -2,8 +2,14 @@ package hello_world
 
 import (
 	"testing"
-	"github.com/kmehran1106/learn-go-with-tests/common"
 )
+
+func assertCorrectMessage(t testing.TB, expected, result string) {
+	t.Helper()
+	if expected != result {
+		t.Errorf("Expected value: %q; But returned %q", expected, result)
+	}
+}
 
 func Test_Hello(t *testing.T) {
 	t.Run("Saying hello to people in english", func(t *testing.T) {
@@ -14,7 +20,7 @@ func Test_Hello(t *testing.T) {
 		result := Hello("Chris", "english")
 
 		// Then
-		common.AssertCorrectMessage(t, expected, result)
+		assertCorrectMessage(t, expected, result)
 	})
 
 	t.Run("Saying hello to people in spanish", func(t *testing.T) {
@@ -25,7 +31,7 @@ func Test_Hello(t *testing.T) {
 		result := Hello("Chris", "spanish")
 
 		// Then
-		common.AssertCorrectMessage(t, expected, result)
+		assertCorrectMessage(t, expected, result)
 	})
 
 	t.Run("Saying hello to people in french", func(t *testing.T) {
@@ -36,7 +42,7 @@ func Test_Hello(t *testing.T) {
 		result := Hello("Chris", "french")
 
 		// Then
-		common.AssertCorrectMessage(t, expected, result)
+		assertCorrectMessage(t, expected, result)
 	})
 
 	t.Run("Saying hello to the world in english when empty", func(t *testing.T) {
@@ -47,6 +53,6 @@ func Test_Hello(t *testing.T) {
 		result := Hello("", "")
 
 		// Then
-		common.AssertCorrectMessage(t, expected, result)
+		assertCorrectMessage(t, expected, result)
 	})
 }
